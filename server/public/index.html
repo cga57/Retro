@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Car Simulator</title>
+	<meta charset="UTF-8">
+	<link rel='stylesheet' href='/stylesheets/style.css'></link>
+</head>
+
+<body bgcolor="lightblue">
+<form>
+	<h1>Car Simulator</h1>
+	<div>by Team Arrow</div>
+	
+	<div id='content'>
+		<div id='status-box'>
+			<h2>Coordinates</h2>
+			<!-- <div id='status'>None yet...</div> -->
+			<h4> Latitude: <p id="latId"> </p> </h4>
+			<h4> Longitude: <p id="longId"> </p> </h4>
+		</div>
+		
+		<div id='left-box'>
+			<div id='modediv'>
+				<h2>Arrow Car Modes</h2>
+				<h4> Current Mode: <p id="carModeId"> </p> </h4>
+				<h3>Volume</h3>
+				<p>
+					<input type="button" id="volumeDown" value=" - "/>
+					<input type="text"   id="volumeid" value="80" size="3" readonly/>
+					<input type="button" id="volumeUp" value=" + "/>
+					(0 - 100)
+				</p>
+				<!-- <h3>Tempo</h3>
+				<p>
+					<input type="button" id="tempoDown" value=" - "/>
+					<input type="text"   id="tempoid" value="120" size="3" readonly/>
+					<input type="button" id="tempoUp" value=" + "/>
+					(BPM)
+				</p> -->
+			</div>
+			
+			<div id='control'>
+				<p>
+					<input type="button" id="PausePlay"  value="Pause/Play"/>
+					<input type="button" id="Next_Song" value="Next Song"/>
+				</p>
+				<p>
+					<input type="button" id="stop" value="Terminate Program"/>
+				</p>
+			</div>
+		</div>
+		<div id='error-box'>
+			<h2>Server Error</h2>
+			<p>Server error detected. Please resolve error before continuing.</p>
+			<div><code id='error-text'>SERVER ERROR: NO RESPONSE FROM BEAT-BOX APPLICATION. IS IT RUNNING?</code></div>
+		</div>
+
+	</div>
+</form>
+	
+	<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+	<script src='http://code.jquery.com/jquery-1.11.1.min.js' type='text/javascript'></script>
+
+	<script src='javascripts/udp_ui.js' type='text/javascript'></script>
+</body>
+</html>
